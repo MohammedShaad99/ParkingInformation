@@ -1,0 +1,66 @@
+@model ParkingInfo
+
+@{
+    ViewData["Title"] = "Parking Details";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-5">@Model.Title details</h1>
+        <a class="btn btn-primary" asp-action="Index">Back to Index</a>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Location</dt>
+                <dd class="col-sm-9">@Model.Location.LocationName</dd>
+
+                <dt class="col-sm-3">Secure</dt>
+                <dd class="col-sm-9"> 
+                    @if (Model.Secure == true)
+                    {
+                        <div>Yes</div>
+                    }
+                    else
+                    {
+                        <div>No</div>
+                    }
+                </dd>
+
+                <dt class="col-sm-3">Type</dt>
+                <dd class="col-sm-9">@Model.Type.ParkingTypeName</dd>
+
+                <dt class="col-sm-3">Capacity</dt>
+                <dd class="col-sm-9">@Model.CapacityNo</dd>
+
+                <dt class="col-sm-3">Availability</dt>
+                <dd class="col-sm-9">@Model.Availability</dd>
+
+                <dt class="col-sm-3">Latitude</dt>
+                <dd class="col-sm-9">@Model.Latitude</dd>
+
+                <dt class="col-sm-3">Longitude</dt>
+                <dd class="col-sm-9">@Model.Longitude</dd>
+                <dt class="col-sm-3">Get Direction</dt>
+                <dd class="col-sm-9"><a href="https://www.google.com/maps/dir/?api=1&destination=@Model.Latitude,@Model.Longitude&key=AIzaSyCTkKZp9rLryiDXaHcSCUZ9rMGYmjxZPyw&q"
+                    target="_blank">
+                    Get Directions
+                </a></dd>
+                <dt class="col-sm-3">Find the Location</dt>
+                <dd class="col-sm-9"></dd> <iframe
+                                            width="600"
+                                            height="450"
+                                            frameborder="0"
+                                            style="border:0"
+                                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTkKZp9rLryiDXaHcSCUZ9rMGYmjxZPyw&q=@Model.Latitude,@Model.Longitude"
+                                            &zoom=15
+                                           </iframe>
+                </dd>
+                
+
+               
+            </dl>
+
+        </div>
+    </div>
+</div>

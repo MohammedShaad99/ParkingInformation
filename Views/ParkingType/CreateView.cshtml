@@ -1,0 +1,18 @@
+@model ParkingType
+@{
+    ViewData["Title"] = "Create Parking Type";
+}
+
+<h1>Create Parking Type</h1>
+
+@using (Html.BeginForm("Create", "ParkingType", FormMethod.Post))
+{
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.ParkingTypeName)
+        @Html.TextBoxFor(model => model.ParkingTypeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ParkingTypeName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}

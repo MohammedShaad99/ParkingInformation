@@ -1,0 +1,18 @@
+@model Location 
+@{
+    ViewData["Title"] = "Create Location";
+}
+
+<h1>Create Location</h1>
+
+@using (Html.BeginForm("Create", "Location", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LocationName)
+        @Html.TextBoxFor(model => model.LocationName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.LocationName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}
