@@ -42,7 +42,7 @@
                 <dt class="col-sm-3">Longitude</dt>
                 <dd class="col-sm-9">@Model.Longitude</dd>
                 <dt class="col-sm-3">Get Direction</dt>
-                <dd class="col-sm-9"><a href="https://www.google.com/maps/dir/?api=1&destination=@Model.Latitude,@Model.Longitude&key=AIzaSyCTkKZp9rLryiDXaHcSCUZ9rMGYmjxZPyw&q"
+                <dd class="col-sm-9"><a href="https://www.google.com/maps/dir/?api=1&destination=@Model.Latitude,@Model.Longitude&key=EnterYourAPIKey"
                     target="_blank">
                     Get Directions
                 </a></dd>
@@ -52,13 +52,10 @@
                                             height="450"
                                             frameborder="0"
                                             style="border:0"
-                                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTkKZp9rLryiDXaHcSCUZ9rMGYmjxZPyw&q=@Model.Latitude,@Model.Longitude"
+                                            src="https://www.google.com/maps/embed/v1/place?key=EnterYourAPIKey=@Model.Latitude,@Model.Longitude"
                                             &zoom=15
                                            </iframe>
-                </dd>
-                
-
-               
+                </dd>               
             </dl>
 
         </div>
